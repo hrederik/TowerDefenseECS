@@ -1,5 +1,7 @@
 using Leopotam.Ecs;
+using SceneLoading;
 using SceneLoading.Messages;
+using StaticData;
 using Tools;
 using UnityEngine;
 
@@ -7,6 +9,9 @@ namespace Boot
 {
     public class EntryPoint : MonoBehaviour
     {
+        [Header("Dependencies")]
+        [SerializeField] private StaticDataProvider _staticDataProvider;
+
         private EcsWorld _world;
         private EcsSystems _systems;
         
@@ -25,6 +30,7 @@ namespace Boot
                 .BuildOneFrames()
                 .GetResult();
 
+            _staticDataProvider.Init();
             LoadGameScene();
         }
 
@@ -41,7 +47,13 @@ namespace Boot
 
         private void LoadGameScene()
         {
-            _world.Message(new LoadSceneRequest {Name = "Game"});
+            if (!_staticDataProvider.TryGetData<ScenesConfig>(out var scenesConfig))
+            {
+                Debug.LogError("Failed to load game scene because SceneConfig could not be found");
+                return;
+            }
+            
+            _world.Message(new LoadSceneRequest {Name = scenesConfig.GameSceneName});
         }
     }
 }
