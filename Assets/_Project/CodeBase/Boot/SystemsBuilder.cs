@@ -1,5 +1,6 @@
 using GameLoop;
 using Leopotam.Ecs;
+using PathFollowing;
 using SceneLoading;
 using Voody.UniLeo;
 
@@ -24,6 +25,7 @@ namespace Boot
         {
             InitFeatureSystems<SceneLoadingFeature>();
             InitFeatureSystems<GameLoopFeature>();
+            InitFeatureSystems<PathFollowingFeature>();
             
             return this;
         }
