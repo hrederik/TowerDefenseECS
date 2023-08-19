@@ -22,9 +22,9 @@ namespace Boot
         
         public SystemsBuilder BuildFeatures()
         {
-            new SceneLoadingFeature().InitSystems(_systems);
-            new GameLoopFeature().InitSystems(_systems);
-
+            InitFeatureSystems<SceneLoadingFeature>();
+            InitFeatureSystems<GameLoopFeature>();
+            
             return this;
         }
 
@@ -40,8 +40,8 @@ namespace Boot
         
         public SystemsBuilder BuildOneFrames()
         {
-            new SceneLoadingFeature().InitOneFrames(_systems);
-            new GameLoopFeature().InitOneFrames(_systems);
+            InitFeatureOneFrames<SceneLoadingFeature>();
+            InitFeatureOneFrames<GameLoopFeature>();
             
             return this;
         }
@@ -50,6 +50,16 @@ namespace Boot
         {
             _systems.Init();
             return _systems;
+        }
+
+        private void InitFeatureSystems<T>() where T : struct, IFeature
+        {
+            new T().InitSystems(_systems);
+        }
+        
+        private void InitFeatureOneFrames<T>() where T : struct, IFeature
+        {
+            new T().InitOneFrames(_systems);
         }
     }
 }
