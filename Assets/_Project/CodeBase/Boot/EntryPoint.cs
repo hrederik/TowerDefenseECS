@@ -26,7 +26,7 @@ namespace Boot
             _systems = new SystemsBuilder(_world)
                 .BuildSceneConversion()
                 .BuildFeatures()
-                .BuildInjections()
+                .BuildInjections(_staticDataProvider)
                 .BuildOneFrames()
                 .GetResult();
 

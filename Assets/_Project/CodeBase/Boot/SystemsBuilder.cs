@@ -1,3 +1,4 @@
+using GameLoop;
 using Leopotam.Ecs;
 using SceneLoading;
 using Voody.UniLeo;
@@ -21,18 +22,27 @@ namespace Boot
         
         public SystemsBuilder BuildFeatures()
         {
-            new SceneLoadingFeature().Init(_systems);
-            
+            new SceneLoadingFeature().InitSystems(_systems);
+            new GameLoopFeature().InitSystems(_systems);
+
             return this;
         }
 
-        public SystemsBuilder BuildInjections()
+        public SystemsBuilder BuildInjections(params object[] injections)
         {
+            for (var i = 0; i < injections.Length; i++)
+            {
+                _systems.Inject(injections[i]);
+            }
+
             return this;
         }
         
         public SystemsBuilder BuildOneFrames()
         {
+            new SceneLoadingFeature().InitOneFrames(_systems);
+            new GameLoopFeature().InitOneFrames(_systems);
+            
             return this;
         }
 
