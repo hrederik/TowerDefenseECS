@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using SceneLoading;
 using Voody.UniLeo;
 
 namespace Boot
@@ -20,6 +21,8 @@ namespace Boot
         
         public SystemsBuilder BuildFeatures()
         {
+            new SceneLoadingFeature().Init(_systems);
+            
             return this;
         }
 
@@ -35,6 +38,7 @@ namespace Boot
 
         public EcsSystems GetResult()
         {
+            _systems.Init();
             return _systems;
         }
     }

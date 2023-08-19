@@ -1,4 +1,6 @@
 using Leopotam.Ecs;
+using SceneLoading.Messages;
+using Tools;
 using UnityEngine;
 
 namespace Boot
@@ -10,7 +12,7 @@ namespace Boot
         
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);   
+            DontDestroyOnLoad(gameObject);
         }
 
         private void Start()
@@ -23,18 +25,23 @@ namespace Boot
                 .BuildOneFrames()
                 .GetResult();
 
-            _systems.Init();
+            LoadGameScene();
         }
 
         private void Update()
         {
             _systems.Run();
         }
-    
+
         private void OnDestroy()
         {
             _systems.Destroy();
             _world.Destroy();
+        }
+
+        private void LoadGameScene()
+        {
+            _world.Message(new LoadSceneRequest {Name = "Game"});
         }
     }
 }
