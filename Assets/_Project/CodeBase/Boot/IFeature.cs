@@ -4,6 +4,7 @@ namespace Boot
 {
     public interface IFeature
     {
-        void Init(EcsSystems systems);
+        void InitSystems(EcsSystems systems);
+        void InitOneFrames(EcsSystems systems);
     }
 }
