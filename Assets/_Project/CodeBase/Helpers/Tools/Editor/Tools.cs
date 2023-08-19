@@ -1,9 +1,10 @@
+using Helpers.Tools.Codegen;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-namespace Tools.Editor
+namespace Helpers.Tools.Editor
 {
-    public class SceneSwitcher : UnityEditor.Editor
+    public class Tools : UnityEditor.Editor
     {
         [MenuItem("Tools/SceneSwitcher/Load Boot Scene")]
         public static void LoadBootScene()
@@ -17,6 +18,12 @@ namespace Tools.Editor
         {
             EditorSceneManager.SaveOpenScenes();
             EditorSceneManager.OpenScene("Assets/_Project/Scenes/Game.unity");
+        }
+        
+        [MenuItem("Tools/Codegen/Generate Providers")]
+        public static void GenerateProviders()
+        {
+            ProviderGenerator.Generate();
         }
     }
 }

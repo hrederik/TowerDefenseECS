@@ -1,8 +1,8 @@
+using Helpers.Extensions;
 using Leopotam.Ecs;
 using SceneLoading;
 using SceneLoading.Messages;
 using StaticData;
-using Tools;
 using UnityEngine;
 
 namespace Boot

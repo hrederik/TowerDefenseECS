@@ -1,6 +1,6 @@
 using Leopotam.Ecs;
 
-namespace Tools
+namespace Helpers.Extensions
 {
     public static class WorldExtensions
     {

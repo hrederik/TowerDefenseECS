@@ -1,6 +1,6 @@
+using Helpers.Extensions;
 using Leopotam.Ecs;
 using SceneLoading.Messages;
-using Tools;
 using UnityEngine.SceneManagement;
 
 namespace SceneLoading.Systems
