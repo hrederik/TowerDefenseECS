@@ -1,3 +1,4 @@
+using Animation;
 using GameLoop;
 using Leopotam.Ecs;
 using PathFollowing;
@@ -26,6 +27,7 @@ namespace Boot
             InitFeatureSystems<SceneLoadingFeature>();
             InitFeatureSystems<GameLoopFeature>();
             InitFeatureSystems<PathFollowingFeature>();
+            InitFeatureSystems<AnimationFeature>();
             
             return this;
         }

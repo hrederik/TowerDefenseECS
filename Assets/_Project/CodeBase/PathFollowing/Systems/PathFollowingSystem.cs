@@ -26,6 +26,7 @@ namespace PathFollowing.Systems
                     if (targetPathPoint.Index >= pathHolderComponent.Path.Length)
                     {
                         entity.Get<PathFollowingBlockedTag>();
+                        entity.Del<InMotionTag>();
                         continue;
                     }
                     
@@ -40,6 +41,7 @@ namespace PathFollowing.Systems
                     var newRotation = Quaternion.Lerp(fromRotation, toRotation, pathFollowingCharacteristics.RotationSpeed * Time.deltaTime);
                     
                     transformLink.Transform.SetPositionAndRotation(newPosition, newRotation);
+                    entity.Get<InMotionTag>();
 
                     if (direction.sqrMagnitude <= 0.25f)
                     {
