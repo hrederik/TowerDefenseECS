@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a129d0c192d4bc581d9afbf737ebd5e, type: 3}
-  m_Name: StaticDataProvider
+  m_Script: {fileID: 11500000, guid: f824f3d309e3444dbf89c1abdff526dc, type: 3}
+  m_Name: SpawnConfig
   m_EditorClassIdentifier: 
-  _staticData:
-  - {fileID: 11400000, guid: 3b9ca3306abede54bb501ccb6d8a44f5, type: 2}
-  - {fileID: 11400000, guid: 4f7bef24cf88c5c488c3eeb52a8c287a, type: 2}
+  UpperWaveBoundOffset: 4
+  EnemyDelay: 3
+  WaveDelay: 10
