@@ -1,4 +1,5 @@
 using Animation;
+using Cooldown;
 using GameLoop;
 using Leopotam.Ecs;
 using PathFollowing;
@@ -28,6 +29,7 @@ namespace Boot
             InitFeatureSystems<GameLoopFeature>();
             InitFeatureSystems<PathFollowingFeature>();
             InitFeatureSystems<AnimationFeature>();
+            InitFeatureSystems<CooldownFeature>();
             
             return this;
         }
