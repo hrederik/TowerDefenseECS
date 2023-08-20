@@ -1,6 +1,7 @@
 using Animation;
 using Common.Systems;
 using Cooldown;
+using Damage;
 using GameLoop;
 using Leopotam.Ecs;
 using PathFollowing;
@@ -35,6 +36,7 @@ namespace Boot
             InitFeatureSystems<AnimationFeature>();
             InitFeatureSystems<SpawnFeature>();
             InitFeatureSystems<CooldownFeature>();
+            InitFeatureSystems<DamageFeature>();
             
             return this;
         }
