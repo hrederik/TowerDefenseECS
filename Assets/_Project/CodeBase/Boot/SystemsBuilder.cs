@@ -1,4 +1,5 @@
 using Animation;
+using Common.Systems;
 using Cooldown;
 using GameLoop;
 using Leopotam.Ecs;
@@ -26,6 +27,8 @@ namespace Boot
         
         public SystemsBuilder BuildFeatures()
         {
+            _systems.Add(new EntityLinkInitSystem());
+            
             InitFeatureSystems<SceneLoadingFeature>();
             InitFeatureSystems<GameLoopFeature>();
             InitFeatureSystems<PathFollowingFeature>();
