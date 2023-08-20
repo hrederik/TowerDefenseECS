@@ -35,12 +35,12 @@ namespace Boot
             InitFeatureSystems<SceneLoadingFeature>();
             InitFeatureSystems<GameLoopFeature>();
             InitFeatureSystems<PathFollowingFeature>();
-            InitFeatureSystems<AnimationFeature>();
-            InitFeatureSystems<SpawnFeature>();
             InitFeatureSystems<AbilitiesFeature>();
-            InitFeatureSystems<CooldownFeature>();
+            InitFeatureSystems<SpawnFeature>();
             InitFeatureSystems<DamageFeature>();
+            InitFeatureSystems<CooldownFeature>();
             InitFeatureSystems<AIFeature>();
+            InitFeatureSystems<AnimationFeature>();
 
             return this;
         }
@@ -59,6 +59,7 @@ namespace Boot
         {
             InitFeatureOneFrames<SceneLoadingFeature>();
             InitFeatureOneFrames<GameLoopFeature>();
+            InitFeatureOneFrames<AbilitiesFeature>();
             
             return this;
         }

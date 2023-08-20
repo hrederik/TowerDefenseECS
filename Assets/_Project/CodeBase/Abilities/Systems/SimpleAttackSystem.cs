@@ -1,5 +1,6 @@
 using System.Linq;
 using Abilities.Components;
+using Abilities.Messages;
 using Common.Components;
 using Cooldown.Components;
 using Damage.Messages;
@@ -45,6 +46,7 @@ namespace Abilities.Systems
 
                 if (firstTarget != default)
                 {
+                    abilityOwner.Get<AttackEvent>();
                     ability.Get<OnCooldown>().Remaining = ability.Get<CooldownValue>().Value;
 
                     world.Message(new DealDamageRequest

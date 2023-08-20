@@ -1,3 +1,4 @@
+using Abilities.Messages;
 using Abilities.Systems;
 using Boot;
 using Leopotam.Ecs;
@@ -12,6 +13,9 @@ namespace Abilities
             systems.Add(new SimpleAttackSystem());
         }
 
-        public void InitOneFrames(EcsSystems systems) { }
+        public void InitOneFrames(EcsSystems systems)
+        {
+            systems.OneFrame<AttackEvent>();
+        }
     }
 }
