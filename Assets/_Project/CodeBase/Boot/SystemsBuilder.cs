@@ -1,4 +1,5 @@
 using Abilities;
+using AI;
 using Animation;
 using Common.Systems;
 using Cooldown;
@@ -39,7 +40,8 @@ namespace Boot
             InitFeatureSystems<AbilitiesFeature>();
             InitFeatureSystems<CooldownFeature>();
             InitFeatureSystems<DamageFeature>();
-            
+            InitFeatureSystems<AIFeature>();
+
             return this;
         }
 
