@@ -18,6 +18,8 @@ namespace Damage.Systems
                 ref var requestTarget = ref request.Target;
                 var damage = request.Amount;
 
+                if (!requestTarget.IsAlive()) continue;
+                
                 if (!requestTarget.Has<Health>())
                 {
                     entity.Del<DealDamageRequest>();

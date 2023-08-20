@@ -1,3 +1,4 @@
+using Abilities;
 using Animation;
 using Common.Systems;
 using Cooldown;
@@ -35,6 +36,7 @@ namespace Boot
             InitFeatureSystems<PathFollowingFeature>();
             InitFeatureSystems<AnimationFeature>();
             InitFeatureSystems<SpawnFeature>();
+            InitFeatureSystems<AbilitiesFeature>();
             InitFeatureSystems<CooldownFeature>();
             InitFeatureSystems<DamageFeature>();
             
