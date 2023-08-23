@@ -35,7 +35,7 @@ namespace AI.Systems
                         world.Message(new UpgradeCharacteristicRequest
                         {
                             Characteristic = UpgradeCharacteristic.AttackDamage,
-                            NewValue = waveCount * upgradeData.DamageIncreaseStep,
+                            NewValue = upgradeData.BaseDamage + waveCount * upgradeData.DamageIncreaseStep,
                             Target = enemy
                         });
                     }
@@ -45,7 +45,7 @@ namespace AI.Systems
                         world.Message(new UpgradeCharacteristicRequest
                         {
                             Characteristic = UpgradeCharacteristic.Health,
-                            NewValue = waveCount * upgradeData.HealthIncreaseStep,
+                            NewValue = upgradeData.BaseHealth + waveCount * upgradeData.HealthIncreaseStep,
                             Target = enemy
                         });
                     }

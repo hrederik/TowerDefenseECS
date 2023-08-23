@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb102306e9ca4b51980024e0ca130656, type: 3}
   m_Name: EnemyUpgradeConfig
   m_EditorClassIdentifier: 
+  BaseDamage: 5
   DamageIncreaseStep: 3
+  BaseHealth: 10
   HealthIncreaseStep: 5
