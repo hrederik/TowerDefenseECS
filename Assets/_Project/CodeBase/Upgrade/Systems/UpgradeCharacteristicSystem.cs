@@ -38,7 +38,7 @@ namespace Upgrade.Systems
             if (damageValue.Value == -1) 
                 return;
 
-            damageValue.Value += value;
+            damageValue.Value = value;
         }
         
         private void ProcessHealthUpgrade(ref EcsEntity target, int value)
@@ -49,7 +49,7 @@ namespace Upgrade.Systems
             if (healthValue.Value == -1) 
                 return;
 
-            healthValue.Value += value;
+            healthValue.Value = value;
         }
     }
 }

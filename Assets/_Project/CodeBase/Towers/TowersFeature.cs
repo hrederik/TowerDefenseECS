@@ -9,6 +9,7 @@ namespace Towers
         public void InitSystems(EcsSystems systems)
         {
             systems.Add(new RotateToTargetSystem());
+            systems.Add(new TowerUpgradeSystem());
         }
 
         public void InitOneFrames(EcsSystems systems) { }
