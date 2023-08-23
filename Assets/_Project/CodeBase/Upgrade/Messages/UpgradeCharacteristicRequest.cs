@@ -12,6 +12,7 @@ namespace Upgrade.Messages
     public enum UpgradeCharacteristic
     {
         AttackDamage = 0,
-        Health = 1
+        Health = 1,
+        CoinsForKill = 2
     }
 }

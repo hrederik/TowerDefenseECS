@@ -4,6 +4,7 @@ using Animation;
 using Common.Messages;
 using Common.Systems;
 using Cooldown;
+using Currencies;
 using Damage;
 using GameLoop;
 using Leopotam.Ecs;
@@ -49,6 +50,7 @@ namespace Boot
             InitFeatureSystems<UpgradeFeature>();
             InitFeatureSystems<AnimationFeature>();
             InitFeatureSystems<StatisticsFeature>();
+            InitFeatureSystems<CurrenciesFeature>();
             InitFeatureSystems<UIFeature>();
 
             return this;
@@ -74,6 +76,7 @@ namespace Boot
             InitFeatureOneFrames<DamageFeature>();
             InitFeatureOneFrames<UpgradeFeature>();
             InitFeatureOneFrames<StatisticsFeature>();
+            InitFeatureOneFrames<CurrenciesFeature>();
             
             return this;
         }

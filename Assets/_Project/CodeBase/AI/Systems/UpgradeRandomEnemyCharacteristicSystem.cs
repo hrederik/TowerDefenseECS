@@ -49,6 +49,16 @@ namespace AI.Systems
                             Target = enemy
                         });
                     }
+                    
+                    if (ShouldUpgrade())
+                    {
+                        world.Message(new UpgradeCharacteristicRequest
+                        {
+                            Characteristic = UpgradeCharacteristic.CoinsForKill,
+                            NewValue = upgradeData.BaseCoinsForKill + waveCount * upgradeData.CoinsForKillIncreaseStep,
+                            Target = enemy
+                        });
+                    }
                 }
             }
         }

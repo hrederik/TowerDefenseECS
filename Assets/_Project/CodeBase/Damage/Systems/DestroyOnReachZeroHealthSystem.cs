@@ -1,5 +1,6 @@
 using AI.Components;
 using Common.Components;
+using Currencies.Components;
 using Damage.Components;
 using Helpers.Extensions;
 using Leopotam.Ecs;
@@ -32,7 +33,14 @@ namespace Damage.Systems
                 // TODO: Исправить - Завести систему удаления энтити по запросу (энтити должна удаляться не сразу, чтобы мир успел обработать удаление) 
                 if (entity.Has<EnemyTag>())
                 {
-                    world.Message(new EnemyDeadEvent());
+                    int coinsForKill = 0;
+                    
+                    if (entity.Has<CoinsForKill>())
+                    {
+                        coinsForKill = entity.Get<CoinsForKill>().Value;
+                    }
+                    
+                    world.Message(new EnemyDeadEvent { CoinsForKill = coinsForKill });
                 }
                 
                 Object.Destroy(entity.Get<GameObjectLink>().GameObject);

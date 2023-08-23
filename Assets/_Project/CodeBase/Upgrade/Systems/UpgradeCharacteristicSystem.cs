@@ -1,4 +1,5 @@
 using Abilities.Components;
+using Currencies.Components;
 using Damage.Components;
 using Helpers;
 using Leopotam.Ecs;
@@ -23,8 +24,13 @@ namespace Upgrade.Systems
                     case UpgradeCharacteristic.AttackDamage:
                         ProcessDamageUpgrade(ref requestTarget, request.NewValue);
                         break;
+                    
                     case UpgradeCharacteristic.Health:
                         ProcessHealthUpgrade(ref requestTarget, request.NewValue);
+                        break;
+                    
+                    case UpgradeCharacteristic.CoinsForKill:
+                        ProcessCoinsForKillUpgrade(ref requestTarget, request.NewValue);
                         break;
                 }
             }
@@ -44,12 +50,23 @@ namespace Upgrade.Systems
         private void ProcessHealthUpgrade(ref EcsEntity target, int value)
         {
             var defaultValue = new Health {Value = -1};
-            ref var healthValue = ref target.GetComponent(ref defaultValue, true);
+            ref var healthValue = ref target.GetComponent(ref defaultValue);
             
             if (healthValue.Value == -1) 
                 return;
 
             healthValue.Value = value;
+        }
+        
+        private void ProcessCoinsForKillUpgrade(ref EcsEntity target, int value)
+        {
+            var defaultValue = new CoinsForKill {Value = -1};
+            ref var coinsForKill = ref target.GetComponent(ref defaultValue);
+            
+            if (coinsForKill.Value == -1) 
+                return;
+
+            coinsForKill.Value = value;
         }
     }
 }

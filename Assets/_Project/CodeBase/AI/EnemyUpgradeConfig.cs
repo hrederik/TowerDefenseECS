@@ -12,5 +12,9 @@ namespace AI
         [Space]
         public int BaseHealth;
         public int HealthIncreaseStep;
+        
+        [Space]
+        public int BaseCoinsForKill;
+        public int CoinsForKillIncreaseStep;
     }
 }

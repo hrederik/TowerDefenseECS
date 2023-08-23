@@ -16,3 +16,5 @@ MonoBehaviour:
   DamageIncreaseStep: 3
   BaseHealth: 10
   HealthIncreaseStep: 5
+  BaseCoinsForKill: 5
+  CoinsForKillIncreaseStep: 5
