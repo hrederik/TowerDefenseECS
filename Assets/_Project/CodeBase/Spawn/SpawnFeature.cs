@@ -9,6 +9,7 @@ namespace Spawn
         public void InitSystems(EcsSystems systems)
         {
             systems.Add(new WaveSpawnSystem());
+            systems.Add(new SpawnOnceSystem());
             systems.Add(new SpawnRequestProcessSystem());
         }
 

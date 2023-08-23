@@ -9,6 +9,7 @@ using Leopotam.Ecs;
 using PathFollowing;
 using SceneLoading;
 using Spawn;
+using Towers;
 using Voody.UniLeo;
 
 namespace Boot
@@ -35,6 +36,7 @@ namespace Boot
             InitFeatureSystems<SceneLoadingFeature>();
             InitFeatureSystems<GameLoopFeature>();
             InitFeatureSystems<PathFollowingFeature>();
+            InitFeatureSystems<TowersFeature>();
             InitFeatureSystems<AbilitiesFeature>();
             InitFeatureSystems<SpawnFeature>();
             InitFeatureSystems<DamageFeature>();

@@ -23,11 +23,18 @@ namespace Abilities.Systems
                 ref var ability = ref damageDealers.GetEntity(damageDealer);
                 ref var abilityOwner = ref damageDealers.Get1(damageDealer).Link.Entity;
 
+                // TODO: Заменить на DeathTag
+                if (!abilityOwner.IsAlive())
+                {
+                    ability.Destroy();
+                    continue;
+                }
+                
                 if (!abilityOwner.Has<AttackTargetsHolder>())
                 {
                     continue;
                 }
-                
+
                 ref var attackTargetsHolder = ref abilityOwner.Get<AttackTargetsHolder>();
 
                 if (attackTargetsHolder.Targets.Count == 0)

@@ -20,6 +20,13 @@ namespace Abilities.Systems
                 ref var ability = ref findAbilities.GetEntity(findAbility);
                 ref var abilityOwner = ref findAbilities.Get1(findAbility).Link.Entity;
                 
+                // TODO: Заменить на DeathTag
+                if (!abilityOwner.IsAlive())
+                {
+                    ability.Destroy();
+                    continue;
+                }
+                
                 if (!abilityOwner.Has<TransformLink>())
                 {
                     Debug.LogError($"[{nameof(FindAttackTargetsSystem)}] ability owner has no {nameof(TransformLink)}");
