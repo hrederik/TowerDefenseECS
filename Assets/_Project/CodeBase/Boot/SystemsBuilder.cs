@@ -1,6 +1,7 @@
 using Abilities;
 using AI;
 using Animation;
+using Common.Messages;
 using Common.Systems;
 using Cooldown;
 using Damage;
@@ -10,6 +11,7 @@ using PathFollowing;
 using SceneLoading;
 using Spawn;
 using Towers;
+using Upgrade;
 using Voody.UniLeo;
 
 namespace Boot
@@ -32,7 +34,7 @@ namespace Boot
         public SystemsBuilder BuildFeatures()
         {
             _systems.Add(new EntityLinkInitSystem());
-            
+
             InitFeatureSystems<SceneLoadingFeature>();
             InitFeatureSystems<GameLoopFeature>();
             InitFeatureSystems<PathFollowingFeature>();
@@ -42,6 +44,7 @@ namespace Boot
             InitFeatureSystems<DamageFeature>();
             InitFeatureSystems<CooldownFeature>();
             InitFeatureSystems<AIFeature>();
+            InitFeatureSystems<UpgradeFeature>();
             InitFeatureSystems<AnimationFeature>();
 
             return this;
@@ -59,9 +62,12 @@ namespace Boot
         
         public SystemsBuilder BuildOneFrames()
         {
+            _systems.OneFrame<EntityInitialized>();
+            
             InitFeatureOneFrames<SceneLoadingFeature>();
             InitFeatureOneFrames<GameLoopFeature>();
             InitFeatureOneFrames<AbilitiesFeature>();
+            InitFeatureOneFrames<UpgradeFeature>();
             
             return this;
         }

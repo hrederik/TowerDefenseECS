@@ -2,7 +2,7 @@ using Abilities.Components;
 using Leopotam.Ecs;
 using PathFollowing.Components;
 
-namespace Abilities.Systems
+namespace AI.Systems
 {
     public class BlockMotionOnHasTargetsSystem : IEcsRunSystem
     {
