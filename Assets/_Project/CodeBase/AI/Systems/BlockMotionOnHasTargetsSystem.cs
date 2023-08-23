@@ -6,7 +6,7 @@ namespace Abilities.Systems
 {
     public class BlockMotionOnHasTargetsSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<AttackTargetsHolder> targetHolderEntities = null;
+        private readonly EcsFilter<AttackTarget, InMotionTag> targetHolderEntities = null;
         
         public void Run()
         {
@@ -15,7 +15,7 @@ namespace Abilities.Systems
                 ref var entity = ref targetHolderEntities.GetEntity(targetHolderEntity);
                 ref var targetHolder = ref targetHolderEntities.Get1(targetHolderEntity);
 
-                if (targetHolder.Targets.Count > 0)
+                if (targetHolder.Target.IsAlive())
                 {
                     entity.Get<PathFollowingBlockedTag>();
                     continue;

@@ -2,7 +2,6 @@ using Abilities.Components;
 using Common.Components;
 using Cooldown.Components;
 using Damage.Components;
-using Helpers;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -27,38 +26,21 @@ namespace Abilities.Systems
                     continue;
                 }
                 
-                if (!abilityOwner.Has<TransformLink>())
+                if (!abilityOwner.Has<TriggerLink>())
                 {
-                    Debug.LogError($"[{nameof(FindAttackTargetsSystem)}] ability owner has no {nameof(TransformLink)}");
-                    continue;
-                }
-
-                if (!ability.Has<RadiusValue>())
-                {
-                    Debug.LogError($"[{nameof(FindAttackTargetsSystem)}] ability owner has no {nameof(RadiusValue)}");
+                    Debug.LogError($"[{nameof(FindAttackTargetsSystem)}] ability owner has no {nameof(TriggerLink)}");
                     continue;
                 }
                 
-                if (!ability.Has<LayerMaskHolder>())
-                {
-                    Debug.LogError($"Entity has no {nameof(LayerMaskHolder)}");
-                    continue;
-                }
+                ref var target = ref abilityOwner.Get<AttackTarget>();
 
-                ref var targetsHolder = ref abilityOwner.Get<AttackTargetsHolder>();
-                
-                var position = abilityOwner.Get<TransformLink>().Transform.position;
-                var radius = ability.Get<RadiusValue>().Value;
-                var layerMask = ability.Get<LayerMaskHolder>().Value;
-
-                targetsHolder.Targets.Clear();
-                
-                foreach (var target in TargetFinder.TryGetEntitiesInRadiusWithComponent<Health>(position, radius, layerMask))
+                foreach (var triggeredEntity in abilityOwner.Get<TriggerLink>().Trigger.EntitiesInTrigger)
                 {
-                    if (targetsHolder.Targets.Count == targetsHolder.Targets.Capacity)
-                        break;
-                    
-                    targetsHolder.Targets.Add(target);
+                    if (!triggeredEntity.Entity.IsAlive()) continue;
+                    if (!triggeredEntity.Entity.Has<Health>()) continue;
+
+                    target.Target = triggeredEntity.Entity;
+                    break;
                 }
 
                 ability.Get<OnCooldown>().Remaining = ability.Get<CooldownValue>().Value;

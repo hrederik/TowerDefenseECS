@@ -1,4 +1,3 @@
-using System.Linq;
 using Abilities.Components;
 using Common.Components;
 using Leopotam.Ecs;
@@ -8,24 +7,19 @@ namespace Towers.Systems
 {
     public class RotateToTargetSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<TransformLink, AttackTargetsHolder> rotatableEntities = null;
+        private readonly EcsFilter<TransformLink, AttackTarget> rotatableEntities = null;
         
         public void Run()
         {
             foreach (var rotatableEntity in rotatableEntities)
             {
                 ref var transformLink = ref rotatableEntities.Get1(rotatableEntity);
-                ref var attackTargetsHolder = ref rotatableEntities.Get2(rotatableEntity);
-                
-                if (attackTargetsHolder.Targets.Count == 0)
-                    continue;
+                ref var attackTarget = ref rotatableEntities.Get2(rotatableEntity);
 
-                var target = attackTargetsHolder.Targets.FirstOrDefault();
-                
-                if (!target.IsAlive())
+                if (!attackTarget.Target.IsAlive())
                     continue;
                 
-                ref var targetTransformLink = ref target.Get<TransformLink>();
+                ref var targetTransformLink = ref attackTarget.Target.Get<TransformLink>();
 
                 var transform = transformLink.Transform;
                 var targetTransform = targetTransformLink.Transform;

@@ -30,14 +30,14 @@ namespace Abilities.Systems
                     continue;
                 }
                 
-                if (!abilityOwner.Has<AttackTargetsHolder>())
+                if (!abilityOwner.Has<AttackTarget>())
                 {
                     continue;
                 }
 
-                ref var attackTargetsHolder = ref abilityOwner.Get<AttackTargetsHolder>();
+                ref var attackTarget = ref abilityOwner.Get<AttackTarget>();
 
-                if (attackTargetsHolder.Targets.Count == 0)
+                if (!attackTarget.Target.IsAlive())
                 {
                     continue;
                 }
@@ -49,7 +49,7 @@ namespace Abilities.Systems
                 }
 
                 ref var damageValue = ref ability.Get<DamageValue>().Value;
-                var firstTarget = attackTargetsHolder.Targets.FirstOrDefault();
+                ref var firstTarget = ref attackTarget.Target;
 
                 if (firstTarget != default)
                 {
