@@ -1,4 +1,5 @@
 using Common.Components;
+using Common.Messages;
 using Leopotam.Ecs;
 
 namespace Common.Systems
@@ -15,6 +16,8 @@ namespace Common.Systems
                 ref var linkRequired = ref linkRequiredEntities.Get1(linkRequiredEntity);
 
                 linkRequired.Link.Entity = entity;
+
+                entity.Get<EntityInitialized>();
                 entity.Del<EntityLinkRequired>();
             }
         }

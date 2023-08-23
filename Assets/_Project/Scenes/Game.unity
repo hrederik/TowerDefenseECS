@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    Value: 100
+    Value: 500
 --- !u!65 &1074835878
 BoxCollider:
   m_ObjectHideFlags: 0
