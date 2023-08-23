@@ -16,6 +16,7 @@ namespace Statistics
         public void InitOneFrames(EcsSystems systems)
         {
             systems.OneFrame<EnemyDeadEvent>();
+            systems.OneFrame<KillCounterUpdatedEvent>();
         }
     }
 }

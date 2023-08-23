@@ -12,6 +12,7 @@ using SceneLoading;
 using Spawn;
 using Statistics;
 using Towers;
+using UI;
 using Upgrade;
 using Voody.UniLeo;
 
@@ -48,6 +49,7 @@ namespace Boot
             InitFeatureSystems<UpgradeFeature>();
             InitFeatureSystems<AnimationFeature>();
             InitFeatureSystems<StatisticsFeature>();
+            InitFeatureSystems<UIFeature>();
 
             return this;
         }

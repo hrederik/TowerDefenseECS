@@ -21,7 +21,7 @@ namespace Statistics.Systems
                     ref var counter = ref killCounters.Get1(killCounter);
 
                     counter.Count++;
-                    world.Message(new KillCounterUpdatedEvent());
+                    world.Message(new KillCounterUpdatedEvent { NewValue = counter.Count });
                 }
             }
         }
