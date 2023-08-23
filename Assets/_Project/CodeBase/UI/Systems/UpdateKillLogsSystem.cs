@@ -1,7 +1,6 @@
 using Leopotam.Ecs;
 using Statistics.Messages;
 using UI.Components;
-using UnityEngine;
 
 namespace UI.Systems
 {

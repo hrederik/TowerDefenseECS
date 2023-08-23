@@ -1,4 +1,5 @@
 using Boot;
+using Damage.Messages;
 using Damage.Systems;
 using Leopotam.Ecs;
 
@@ -14,7 +15,7 @@ namespace Damage
 
         public void InitOneFrames(EcsSystems systems)
         {
-            
+            systems.OneFrame<HealthUpdatedEvent>();
         }
     }
 }

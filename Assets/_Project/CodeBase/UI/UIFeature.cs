@@ -9,6 +9,7 @@ namespace UI
         public void InitSystems(EcsSystems systems)
         {
             systems.Add(new UpdateKillLogsSystem());
+            systems.Add(new UpdateCastleHealthBarSystem());
         }
 
         public void InitOneFrames(EcsSystems systems) { }

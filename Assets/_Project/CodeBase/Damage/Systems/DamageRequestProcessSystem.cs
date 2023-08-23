@@ -1,11 +1,13 @@
 using Damage.Components;
 using Damage.Messages;
+using Helpers.Extensions;
 using Leopotam.Ecs;
 
 namespace Damage.Systems
 {
     public class DamageRequestProcessSystem : IEcsRunSystem
     {
+        private readonly EcsWorld world = null;
         private readonly EcsFilter<DealDamageRequest> damageRequests = null;
         
         public void Run()
@@ -27,6 +29,12 @@ namespace Damage.Systems
                 }
 
                 requestTarget.Get<Health>().Value -= damage;
+                world.Message(new HealthUpdatedEvent
+                {
+                    Target = requestTarget,
+                    NewValue = requestTarget.Get<Health>().Value
+                });
+                
                 entity.Del<DealDamageRequest>();
             }
         }

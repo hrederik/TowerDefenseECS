@@ -71,6 +71,7 @@ namespace Boot
             InitFeatureOneFrames<SceneLoadingFeature>();
             InitFeatureOneFrames<GameLoopFeature>();
             InitFeatureOneFrames<AbilitiesFeature>();
+            InitFeatureOneFrames<DamageFeature>();
             InitFeatureOneFrames<UpgradeFeature>();
             InitFeatureOneFrames<StatisticsFeature>();
             
