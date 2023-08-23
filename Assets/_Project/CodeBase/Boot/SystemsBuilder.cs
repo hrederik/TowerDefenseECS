@@ -10,6 +10,7 @@ using Leopotam.Ecs;
 using PathFollowing;
 using SceneLoading;
 using Spawn;
+using Statistics;
 using Towers;
 using Upgrade;
 using Voody.UniLeo;
@@ -46,6 +47,7 @@ namespace Boot
             InitFeatureSystems<AIFeature>();
             InitFeatureSystems<UpgradeFeature>();
             InitFeatureSystems<AnimationFeature>();
+            InitFeatureSystems<StatisticsFeature>();
 
             return this;
         }
@@ -68,6 +70,7 @@ namespace Boot
             InitFeatureOneFrames<GameLoopFeature>();
             InitFeatureOneFrames<AbilitiesFeature>();
             InitFeatureOneFrames<UpgradeFeature>();
+            InitFeatureOneFrames<StatisticsFeature>();
             
             return this;
         }
