@@ -3,6 +3,7 @@ using Helpers;
 using Helpers.Extensions;
 using Leopotam.Ecs;
 using StaticData;
+using UI.Messages;
 using UnityEngine;
 using Upgrade.Components;
 using Upgrade.Messages;
@@ -30,15 +31,25 @@ namespace Towers.Systems
             if (!hit.transform.gameObject.TryGetComponent<EntityLink>(out var entityLink))
                 return;
 
+            ref var entity = ref entityLink.Entity;
             ref var level = ref entityLink.Entity.Get<Level>();
 
             level.Value++;
-            world.Message(new UpgradeCharacteristicRequest
+
+            var newPrice = upgradeData.BasePrice + level.Value * upgradeData.PriceIncreaseStep;
+            
+            world.Message(new ShowUpgradeWidgetRequest
             {
-                Characteristic = UpgradeCharacteristic.AttackDamage,
-                NewValue = upgradeData.BaseDamage + upgradeData.DamageStep * level.Value,
-                Target = entityLink.Entity
+                UpgradeTarget = entity,
+                Price = newPrice
             });
+            
+            // world.Message(new UpgradeCharacteristicRequest
+            // {
+            //     Characteristic = UpgradeCharacteristic.AttackDamage,
+            //     NewValue = upgradeData.BaseDamage + upgradeData.DamageStep * level.Value,
+            //     Target = entityLink.Entity
+            // });
         }
     }
 }

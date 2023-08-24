@@ -1,6 +1,7 @@
 using Abilities;
 using AI;
 using Animation;
+using Common;
 using Common.Messages;
 using Common.Systems;
 using Cooldown;
@@ -36,8 +37,7 @@ namespace Boot
         
         public SystemsBuilder BuildFeatures()
         {
-            _systems.Add(new EntityLinkInitSystem());
-
+            InitFeatureSystems<CommonFeature>();
             InitFeatureSystems<SceneLoadingFeature>();
             InitFeatureSystems<GameLoopFeature>();
             InitFeatureSystems<PathFollowingFeature>();
@@ -68,8 +68,7 @@ namespace Boot
         
         public SystemsBuilder BuildOneFrames()
         {
-            _systems.OneFrame<EntityInitialized>();
-            
+            InitFeatureOneFrames<CommonFeature>();
             InitFeatureOneFrames<SceneLoadingFeature>();
             InitFeatureOneFrames<GameLoopFeature>();
             InitFeatureOneFrames<AbilitiesFeature>();
@@ -77,6 +76,7 @@ namespace Boot
             InitFeatureOneFrames<UpgradeFeature>();
             InitFeatureOneFrames<StatisticsFeature>();
             InitFeatureOneFrames<CurrenciesFeature>();
+            InitFeatureOneFrames<UIFeature>();
             
             return this;
         }

@@ -3,6 +3,7 @@ using Currencies.Components;
 using Damage.Components;
 using Helpers;
 using Leopotam.Ecs;
+using UnityEngine;
 using Upgrade.Messages;
 
 namespace Upgrade.Systems
@@ -45,6 +46,7 @@ namespace Upgrade.Systems
                 return;
 
             damageValue.Value = value;
+            Debug.Log($"<color=blue><b>Damage upgraded; new value: {damageValue.Value}</b></color>");
         }
         
         private void ProcessHealthUpgrade(ref EcsEntity target, int value)

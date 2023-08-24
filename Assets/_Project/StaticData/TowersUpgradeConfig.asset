@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseDamage: 5
   DamageStep: 5
+  BasePrice: 5
+  PriceIncreaseStep: 5

@@ -1,5 +1,6 @@
 using Boot;
 using Leopotam.Ecs;
+using UI.Messages;
 using UI.Systems;
 
 namespace UI
@@ -10,9 +11,15 @@ namespace UI
         {
             systems.Add(new UpdateKillLogsSystem());
             systems.Add(new UpdateCoinsCounterSystem());
+            systems.Add(new UpgradeWidgetProcessSystem());
             systems.Add(new UpdateCastleHealthBarSystem());
         }
 
-        public void InitOneFrames(EcsSystems systems) { }
+        public void InitOneFrames(EcsSystems systems)
+        {
+            systems.OneFrame<ShowUpgradeWidgetRequest>();
+            systems.OneFrame<HideUpgradeWidgetRequest>();
+            systems.OneFrame<UpgradeConfirmedEvent>();
+        }
     }
 }

@@ -8,5 +8,9 @@ namespace Towers
     {
         public int BaseDamage;
         public int DamageStep;
+        
+        [Space]
+        public int BasePrice;
+        public int PriceIncreaseStep;
     }
 }
