@@ -1,5 +1,8 @@
-using Voody.UniLeo;
 using UnityEngine;
+using Voody.UniLeo;
 
-[AddComponentMenu("Providers/Currencies/CoinsForKill")]
-public class CoinsForKillProvider : MonoProvider<Currencies.Components.CoinsForKill> { }
+namespace Currencies.Providers
+{
+    [AddComponentMenu("Providers/Currencies/CoinsForKill")]
+    public class CoinsForKillProvider : MonoProvider<Currencies.Components.CoinsForKill> { }
+}

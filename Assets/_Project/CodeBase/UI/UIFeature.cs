@@ -12,7 +12,7 @@ namespace UI
             systems.Add(new UpdateKillLogsSystem());
             systems.Add(new UpdateCoinsCounterSystem());
             systems.Add(new UpgradeWidgetProcessSystem());
-            systems.Add(new UpdateCastleHealthBarSystem());
+            systems.Add(new UpdateHealthBarsSystem());
         }
 
         public void InitOneFrames(EcsSystems systems)

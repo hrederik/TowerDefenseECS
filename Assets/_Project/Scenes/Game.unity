@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 347260932}
   - component: {fileID: 347260935}
   - component: {fileID: 347260937}
-  - component: {fileID: 347260936}
+  - component: {fileID: 347260938}
   m_Layer: 5
   m_Name: CastleHealthBar
   m_TagString: Untagged
@@ -736,18 +736,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convertMode: 0
---- !u!114 &347260936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347260931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5664759a940d4e0689a6444cbb385354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &347260937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +750,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     Image: {fileID: 556213089}
+--- !u!114 &347260938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347260931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0d157e91f4a47af86e58b720d9ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    TargetLink: {fileID: 1074835873}
 --- !u!1 &364245751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,7 +2246,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1074835870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8528929485447f87d1169a449361d0, type: 3}
+  m_Script: {fileID: 11500000, guid: b0cfe327642ce544396f8b076c5bac55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value:

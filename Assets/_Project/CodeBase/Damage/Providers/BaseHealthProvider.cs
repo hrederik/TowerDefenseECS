@@ -1,5 +1,8 @@
-using Voody.UniLeo;
 using UnityEngine;
+using Voody.UniLeo;
 
-[AddComponentMenu("Providers/Damage/BaseHealth")]
-public class BaseHealthProvider : MonoProvider<Damage.Components.BaseHealth> { }
+namespace Damage.Providers
+{
+    [AddComponentMenu("Providers/Damage/BaseHealth")]
+    public class BaseHealthProvider : MonoProvider<Damage.Components.BaseHealth> { }
+}
