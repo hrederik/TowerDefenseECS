@@ -4,6 +4,8 @@ using Leopotam.Ecs;
 using SceneLoading;
 using SceneLoading.Messages;
 using StaticData;
+using UI;
+using UI.Messages;
 
 namespace GameLoop.Systems
 {
@@ -24,6 +26,7 @@ namespace GameLoop.Systems
                 if (!component.Name.Equals(scenesConfig.GameSceneName)) continue;
                 
                 world.Message(new GameStartedEvent());
+                world.Message(new ShowScreenRequest { Identifier = UIScreenIdentifiers.Gameplay });
             }
         }
     }

@@ -22,6 +22,8 @@ namespace Boot
 
         private void Start()
         {
+            _staticDataProvider.Init();
+            
             _world = new EcsWorld();
             _systems = new SystemsBuilder(_world)
                 .BuildSceneConversion()
@@ -29,8 +31,7 @@ namespace Boot
                 .BuildInjections(_staticDataProvider)
                 .BuildOneFrames()
                 .GetResult();
-
-            _staticDataProvider.Init();
+            
             LoadGameScene();
         }
 

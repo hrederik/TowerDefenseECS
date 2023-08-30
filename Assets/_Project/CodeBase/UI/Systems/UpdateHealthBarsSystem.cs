@@ -30,6 +30,9 @@ namespace UI.Systems
                     if (!target.Has<BaseHealth>())
                         continue;
                     
+                    if (healthBarTarget.TargetLink == null)
+                        continue;
+
                     if (!target.AreIdEquals(healthBarTarget.TargetLink.Entity)) 
                         continue;
 

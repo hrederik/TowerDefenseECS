@@ -13,6 +13,12 @@ namespace StaticData
 
         public void Init()
         {
+            for (var i = 0; i < _staticData.Length; i++)
+            {
+                if (_staticData[i] is IInitialize initialize)
+                    initialize.Init();
+            }
+
             _staticDataMap = _staticData.ToDictionary(key => key.GetType(), value => value);
         }
 

@@ -9,6 +9,8 @@ namespace UI
     {
         public void InitSystems(EcsSystems systems)
         {
+            systems.Add(new ScreenManageSystem());
+            
             systems.Add(new UpdateKillLogsSystem());
             systems.Add(new UpdateCoinsCounterSystem());
             systems.Add(new UpgradeWidgetProcessSystem());
@@ -19,6 +21,10 @@ namespace UI
         {
             systems.OneFrame<ShowUpgradeWidgetRequest>();
             systems.OneFrame<HideUpgradeWidgetRequest>();
+            
+            systems.OneFrame<ShowScreenRequest>();
+            systems.OneFrame<HideScreenRequest>();
+            
             systems.OneFrame<UpgradeConfirmedEvent>();
         }
     }
