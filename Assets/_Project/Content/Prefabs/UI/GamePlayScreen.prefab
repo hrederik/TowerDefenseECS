@@ -1229,6 +1229,7 @@ GameObject:
   - component: {fileID: 5854030307478622358}
   - component: {fileID: 1965195259376768687}
   - component: {fileID: 1865178950156924693}
+  - component: {fileID: 8213205628713592613}
   m_Layer: 5
   m_Name: CastleHealthBar
   m_TagString: Untagged
@@ -1298,6 +1299,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     TargetLink: {fileID: 0}
+--- !u!114 &8213205628713592613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956014912026454269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf21aae5f3e1eb45a8b3acdf0b4689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4303835543972090714
 GameObject:
   m_ObjectHideFlags: 0
