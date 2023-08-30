@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AI
 {
-    [CreateAssetMenu(menuName = "StaticData/EnemyUpgradeConfig", fileName = "EnemyUpgradeConfig", order = 0)]
+    [CreateAssetMenu(menuName = "StaticData/Configs/EnemyUpgradeConfig", fileName = "EnemyUpgradeConfig", order = 0)]
     public class EnemyUpgradeConfig : BaseStaticData
     {
         public int BaseDamage;

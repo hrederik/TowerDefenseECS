@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SceneLoading
 {
-    [CreateAssetMenu(menuName = "StaticData/ScenesConfig", fileName = "ScenesConfig", order = 0)]
+    [CreateAssetMenu(menuName = "StaticData/Configs/ScenesConfig", fileName = "ScenesConfig", order = 0)]
     public class ScenesConfig : BaseStaticData
     {
         public string GameSceneName;

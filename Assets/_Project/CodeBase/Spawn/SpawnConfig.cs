@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Spawn
 {
-    [CreateAssetMenu(menuName = "StaticData/SpawnConfig", fileName = "SpawnConfig", order = 0)]
+    [CreateAssetMenu(menuName = "StaticData/Configs/SpawnConfig", fileName = "SpawnConfig", order = 0)]
     public class SpawnConfig : BaseStaticData
     {
         public int UpperWaveBoundOffset;

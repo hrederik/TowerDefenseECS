@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Towers
 {
-    [CreateAssetMenu(menuName = "StaticData/TowersUpgradeConfig", fileName = "TowersUpgradeConfig", order = 0)]
+    [CreateAssetMenu(menuName = "StaticData/Configs/TowersUpgradeConfig", fileName = "TowersUpgradeConfig", order = 0)]
     public class TowersUpgradeConfig : BaseStaticData
     {
         public int BaseDamage;
